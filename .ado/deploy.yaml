@@ -15,11 +15,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-- stage: Install
+- stage: Checkout
   jobs: 
-  - job: npminstall
+  - job: checkoutjob
     steps:
-    - task: Npm@1
-      inputs:
-        command: 'install'
+       - checkout: self
 - template: templates/mytemplate.yaml@eng-devops
