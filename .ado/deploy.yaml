@@ -6,9 +6,20 @@ trigger: none
 resources:
     repositories:
         - repository: eng-devops
+          name: sbollap1/eng-devops
           type: github
-          endpoint: shbolla-svc-conn
+          endpoint: sbollap1
           ref: main
 
+pool:
+  vmImage: 'ubuntu-latest'
+
 stages:
-    - template: templates@mytemplate.yaml@eng-devops
+- stage: Install
+  jobs: 
+  - job: npminstall
+    steps:
+    - task: Npm@1
+      inputs:
+        command: 'install'
+- template: templates/mytemplate.yaml@eng-devops
