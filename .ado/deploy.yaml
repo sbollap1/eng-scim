@@ -1,1 +1,14 @@
 # deploy
+pr: none
+
+trigger: none
+
+resources:
+    repositories:
+        - repository: eng-devops
+          type: github
+          endpoint: shbolla-svc-conn
+          ref: main
+
+stages:
+    - template: templates@mytemplate.yaml@eng-devops
