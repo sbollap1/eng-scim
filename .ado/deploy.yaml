@@ -20,4 +20,4 @@ stages:
   - job: checkoutjob
     steps:
        - checkout: self
-- template: templates/mytemplate.yaml@eng-devops
+- template: templates/mytemplate2.yaml@eng-devops
