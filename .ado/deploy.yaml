@@ -26,4 +26,5 @@ stages:
     steps:
        - script: cd $(Build.SourcesDirectory)/ ; ls -ltr ;
          displayName: MyTestJob Step one
+       - checkout: eng-devops
        - template: templates/steps.yaml@eng-devops
