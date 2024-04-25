@@ -3,7 +3,7 @@ resources:
     - repository: eng-devops
       name: sbollap1/eng-devops
       type: github
-      endpoint: sbollap1
+      endpoint: sbollap1  # Service connection name
       ref: main
 
 jobs:
@@ -11,9 +11,5 @@ jobs:
   pool:
     vmImage: 'ubuntu-latest'
   steps:
-    - template: templates/checkout-main-repo.yaml@eng-devops  # Checkout main repo
-    - template: templates/checkout-eng-devops.yaml@eng-devops  # Checkout eng-devops repo
-      parameters:
-        serviceConnection: 'sbollap1'
-    - template: templates/step1.yaml@eng-devops
-    - template: templates/step2.yaml@eng-devops
+    - template: templates/checkout-main-repo.yaml@eng-devops
+    - template: templates/checkout-eng-devops.yaml@eng-devops
