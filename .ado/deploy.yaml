@@ -10,6 +10,11 @@ resources:
           type: github
           endpoint: sbollap1
           ref: main
+        - repository: eng-scim
+          name: sbollap1/eng-scim
+          type: github
+          endpoint: sbollap1
+          ref: main
 
 pool:
   vmImage: 'ubuntu-latest'
