@@ -15,9 +15,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-- stage: Checkout
+- stage: MyDeploy
   jobs: 
-  - job: checkoutjob
+  - job: MyTestJob
     steps:
-       - checkout: self
-- template: templates/mytemplate2.yaml@eng-devops
+       - script: cd $(Build.SourcesDirectory)/ ; ls -ltr ;
+       - template: templates/steps.yaml@eng-devops
