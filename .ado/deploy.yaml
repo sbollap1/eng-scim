@@ -1,35 +1,19 @@
-# deploy
-pr: none
-
-trigger: none
-
 resources:
-    repositories:
-        - repository: eng-devops
-          name: sbollap1/eng-devops
-          type: github
-          endpoint: sbollap1
-          ref: main
-        - repository: eng-scim
-          name: sbollap1/eng-scim
-          type: github
-          endpoint: sbollap1
-          ref: main
-
-pool:
-  vmImage: 'ubuntu-latest'
+  repositories:
+    - repository: eng-devops
+      name: sbollap1/eng-devops
+      type: github
+      endpoint: sbollap1
+      ref: main
 
 jobs:
 - job: Linux
   pool:
     vmImage: 'ubuntu-latest'
   steps:
-  - template: templates/step1.yaml@eng-devops
-  - template: templates/step2.yaml@eng-devops
-    parameters:
-      serviceConnection: 'sbollap1'
-
-
-#jobs:
-# - template: templates/job1.yaml@eng-devops
-#  - template: templates/job2.yaml@eng-devops
+    - template: templates/checkout-main-repo.yaml@eng-devops  # Checkout main repo
+    - template: templates/checkout-eng-devops.yaml@eng-devops  # Checkout eng-devops repo
+      parameters:
+        serviceConnection: 'sbollap1'
+    - template: templates/step1.yaml@eng-devops
+    - template: templates/step2.yaml@eng-devops
