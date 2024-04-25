@@ -21,4 +21,3 @@ pool:
 
 jobs:
   - template: templates/job1.yaml@eng-devops
-  - template: templates/job2.yaml@eng-devops
