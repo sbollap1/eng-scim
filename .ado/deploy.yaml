@@ -19,8 +19,6 @@ resources:
 pool:
   vmImage: 'ubuntu-latest'
 
-# File: azure-pipelines.yml
-
 jobs:
 - job: Linux
   pool:
