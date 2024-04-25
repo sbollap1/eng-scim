@@ -19,6 +19,16 @@ resources:
 pool:
   vmImage: 'ubuntu-latest'
 
+# File: azure-pipelines.yml
+
 jobs:
-  - template: templates/job1.yaml@eng-devops
-  - template: templates/job2.yaml@eng-devops
+- job: Linux
+  pool:
+    vmImage: 'ubuntu-latest'
+  steps:
+  - template: templates/step1.yaml@eng-devops
+  - template: templates/step2.yaml@eng-devops
+
+#jobs:
+# - template: templates/job1.yaml@eng-devops
+#  - template: templates/job2.yaml@eng-devops
