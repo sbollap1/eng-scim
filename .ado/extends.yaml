@@ -1,0 +1,23 @@
+# deploy
+pr: none
+
+trigger: none
+
+resources:
+    repositories:
+        - repository: eng-devops
+          name: sbollap1/eng-devops
+          type: github
+          endpoint: sbollap1
+          ref: main
+        - repository: eng-scim
+          name: sbollap1/eng-scim
+          type: github
+          endpoint: sbollap1
+          ref: main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+extends:
+  - template: templates/steps.yaml@eng-devops
