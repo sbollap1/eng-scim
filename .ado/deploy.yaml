@@ -19,18 +19,5 @@ resources:
 pool:
   vmImage: 'ubuntu-latest'
 
-stages:
-
-- stage: MyDeploy
-  jobs: 
-
-  - job: MyTestJob
-    steps:
-
-       - script: cd $(Build.SourcesDirectory)/ ; ls -ltr ;
-         displayName: MyTestJob Step one
-
-
-       - template: templates/steps.yaml@eng-devops
-       - script: cd $(Build.SourcesDirectory)/ ; ls -ltr ;
-         displayName: MyTestJob Step one
+jobs:
+  - template: templates/job1.yaml@eng-devops
