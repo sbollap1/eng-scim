@@ -1,6 +1,14 @@
 trigger: none
 
+resources:
+  repositories:
+    - repository: eng-devops
+      name: sbollap1/eng-devops
+      type: github
+      endpoint: sbollap1
+      ref: main
+      
 extends:
-  template: simple-param.yaml
+  template: templates/simple-param.yaml@eng-devops
   parameters:
     yesNo: false
