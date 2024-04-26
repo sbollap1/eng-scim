@@ -13,3 +13,4 @@ extends:
   parameters:
     yesNo: false
     svcconn: 'sbollap1'
+    endpoint: 'eng-devops'
