@@ -12,3 +12,4 @@ extends:
   template: templates/simple-param.yaml@eng-devops
   parameters:
     yesNo: false
+    svcconn: 'sbollap1'
